@@ -33,12 +33,13 @@ class WgmCampfire_SetupSection extends Extension_PageSection {
 	function saveJsonAction() {
 		try {
 			@$api_token = DevblocksPlatform::importGPC($_REQUEST['api_token'],'string','');
-			@$url		= DevblocksPlatform::importGPC($_REQUEST['url'],'string','');
+			@$url = DevblocksPlatform::importGPC($_REQUEST['url'],'string','');
 			
 			if(empty($api_token) || empty($url))
 				throw new Exception("Both the API Auth Token and URL are required.");
 				
 			$campfire = WgmCampfire_API::getInstance();
+			$campfire->setCredentials($api_token, $url);
 			$response = $campfire->request('rooms.json', null);
 			$response = json_decode($response);
 			
@@ -70,9 +71,9 @@ endif;
 class WgmCampfire_API {
 	static $_instance = null;
 	private $_api_token = null;
+	private $_url = null;
 	
 	private function __construct() {
-		
 		$this->_api_token = DevblocksPlatform::getPluginSetting('wgm.campfire','api_token','');
 		$this->_url = DevblocksPlatform::getPluginSetting('wgm.campfire','url','');
 	}
@@ -86,6 +87,11 @@ class WgmCampfire_API {
 		}
 
 		return self::$_instance;
+	}
+	
+	public function setCredentials($api_token, $subdomain) {
+		$this->_api_token = $api_token;
+		$this->_url = $subdomain;
 	}
 	
 	/**
