@@ -139,18 +139,18 @@ class WgmCampfire_EventActionPost extends Extension_DevblocksEventAction {
 	
 	function run($token, Model_TriggerEvent $trigger, $params, &$values) {
 		$campfire = WgmCampfire_API::getInstance();
-		
+
 		// Translate message tokens
 		$tpl_builder = DevblocksPlatform::getTemplateBuilder();
-		$content = $tpl_builder->build($params['content'], $values);
-		
-		$path = sprintf('room/%d/join.json', $params['room']);
-		$campfire->request($path, '');
-		$path = sprintf('room/%d/speak.json', $params['room']);
-		$data = '{"message":{"body":"' . addslashes($content) . '"}}';
-		$response = $campfire->request($path, $data);
-		$path = sprintf('room/%d/leave.json', $params['room']);
-		$campfire->request($path, '');
+		if(false !== ($content = $tpl_builder->build($params['content'], $values))) {
+			//$path = sprintf('room/%d/join.json', $params['room']);
+			//$campfire->request($path, '');
+			$path = sprintf('room/%d/speak.json', $params['room']);
+			$data = '{"message":{"body":"' . addslashes($content) . '"}}';
+			$response = $campfire->request($path, $data);
+			//$path = sprintf('room/%d/leave.json', $params['room']);
+			//$campfire->request($path, '');
+		}
 	}
 };
 endif;
