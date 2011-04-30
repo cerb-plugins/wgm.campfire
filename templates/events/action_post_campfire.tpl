@@ -1,14 +1,12 @@
-<b>Target room:</b>
-
+<b>Room:</b>
 <select name="{$namePrefix}[room]">
-
-{foreach $rooms as $room_id => $room_name}
+{foreach from=$rooms key=room_id item=room_name}
 <option value="{$room_id}"{if $params.room == $room_id} selected{/if}>{$room_name}</option>
 {/foreach}
 </select>
 <br>
 
-<b>{'common.content'|devblocks_translate|capitalize}:</b><br>
+<b>Speak text:</b><br>
 <textarea name="{$namePrefix}[content]" rows="10" cols="45" style="width:100%;">{$params.content}</textarea><br>
 
 {if !empty($token_labels)}

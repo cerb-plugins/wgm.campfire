@@ -68,13 +68,13 @@
 		
 		<extension point="devblocks.event.action">
 			<id>wgmcampfire.event.action.post</id>
-			<name>Post Text To Campfire </name>
+			<name>Speak text in Campfire</name>
 			<class>
 				<file>api/App.php</file>
 				<name>WgmCampfire_EventActionPost</name>
 			</class>
 			<params>
-				<param key="label" value="Post Text to Campfire" />
+				<param key="label" value="Speak text in Campfire" />
 			</params>
 		</extension>
 		

@@ -15,7 +15,7 @@
 	<b>Campfire Subdomain:</b><br>
 	https://<input type="text" name="url" value="{$params.url}" size="24">.campfirenow.com<br>
 	<br>
-	<div class="status"></div>	
+	<div class="status"></div>
 
 	<button type="button" class="submit"><span class="cerb-sprite2 sprite-tick-circle-frame"></span> {'common.save_changes'|devblocks_translate|capitalize}</button>	
 </fieldset>
