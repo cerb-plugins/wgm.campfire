@@ -1,26 +1,11 @@
 <?php
-if(class_exists('Extension_PageMenuItem')):
-class WgmCampfire_SetupPluginsMenuItem extends Extension_PageMenuItem {
-	const POINT = 'wgmcampfire.setup.menu.plugins.campfire';
-	
-	function render() {
-		$tpl = DevblocksPlatform::getTemplateService();
-		$tpl->assign('extension', $this);
-		$tpl->display('devblocks:wgm.campfire::setup/menu_item.tpl');
-	}
-};
-endif;
-
-if(class_exists('Extension_PageSection')):
-class WgmCampfire_SetupSection extends Extension_PageSection {
-	const ID = 'wgmcampfire.setup.campfire';
+if(class_exists('Extension_PluginSetup')):
+class WgmCampfire_Setup extends Extension_PluginSetup {
+	const POINT = 'wgmcampfire.setup';
 	
 	function render() {
 		$tpl = DevblocksPlatform::getTemplateService();
 
-		$visit = CerberusApplication::getVisit();
-		$visit->set(ChConfigurationPage::ID, 'campfire');
-		
 		$params = array(
 			'api_token' => DevblocksPlatform::getPluginSetting('wgm.campfire','api_token',''),
 			'url' => DevblocksPlatform::getPluginSetting('wgm.campfire','url',''),
@@ -30,7 +15,7 @@ class WgmCampfire_SetupSection extends Extension_PageSection {
 		$tpl->display('devblocks:wgm.campfire::setup/index.tpl');
 	}
 	
-	function saveJsonAction() {
+	function save(&$errors) {
 		try {
 			@$api_token = DevblocksPlatform::importGPC($_REQUEST['api_token'],'string','');
 			@$url = DevblocksPlatform::importGPC($_REQUEST['url'],'string','');
@@ -55,14 +40,12 @@ class WgmCampfire_SetupSection extends Extension_PageSection {
 			DevblocksPlatform::setPluginSetting('wgm.campfire','api_token',$api_token);
 			DevblocksPlatform::setPluginSetting('wgm.campfire','url',$url);
 			DevblocksPlatform::setPluginSetting('wgm.campfire','rooms', $rooms);
-			
-		    echo json_encode(array('status'=>true,'message'=>'Saved!'));
-		    return;
+
+			return true;
 			
 		} catch (Exception $e) {
-			echo json_encode(array('status'=>false,'error'=>$e->getMessage()));
-			return;
-			
+			$errors[] = $e->getMessage();
+			return false;
 		}		
 	}
 };

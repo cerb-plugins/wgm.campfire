@@ -4,31 +4,23 @@
 	<name>[WGM] 37Signals Campfire Integration</name>
 	<description>This plugin provides integration with 37Signals Campfire for notification functionality.</description>
 	<author>WebGroup Media, LLC.</author>
-	<version>1.0.0</version>
-	<link>http://www.cerb5.com/</link>
+	<version>1.0.1</version>
+	<link>https://github.com/cerb5-plugins/wgm.campfire</link>
 	<image>plugin.png</image>
  
 	<!-- Requirements -->
 
 	<requires>
-		<app_version min="5.6" max="5.7" />
+		<app_version min="5.6" max="5.7.99" />
 		<php_extension name="curl" />
 	</requires>
  
 	<!-- Plugin Dependencies -->
 	
 	<dependencies>
-		<require plugin_id="cerberusweb.core" version="5.4.0" />
+		<require plugin_id="cerberusweb.core" version="5.6" />
 	</dependencies>
 
-	<!-- Patches -->
-	
-	<patches>
-		<!--
-		<patch version="5.3.0" revision="1" file="patches/5.3.0.php" />
-		-->
-	</patches>
-	
 	<!-- Exported Classes -->
 	
 	<class_loader>
@@ -40,37 +32,20 @@
 	<!-- Extensions -->
  
 	<extensions>
-
-		<!-- Setup Page Menu Item -->
-
-		<extension point="cerberusweb.ui.page.menu.item">
-			<id>wgmcampfire.setup.menu.plugins.campfire</id>
-			<name>Campfire Plugins Menu Item</name>
+		<!-- Plugin Setup -->
+		
+		<extension point="cerberusweb.plugin.setup">
+			<id>wgmcampfire.setup</id>
+			<name>Setup</name>
 			<class>
 				<file>api/App.php</file>
-				<name>WgmCampfire_SetupPluginsMenuItem</name>
+				<name>WgmCampfire_Setup</name>
 			</class>
 			<params>
-				<param key="page_id" value="core.page.configuration" />
-				<param key="menu_id" value="core.setup.menu.plugins" />
+				<param key="tab_label" value="wgm.campfire.common" />
 			</params>
 		</extension>
-		
-		<!-- Setup Page Sections -->
-		
-		<extension point="cerberusweb.ui.page.section">
-			<id>wgmcampfire.setup.campfire</id>
-			<name>Setup Page Campfire Section</name>
-			<class>
-				<file>api/App.php</file>
-				<name>WgmCampfire_SetupSection</name>
-			</class>
-			<params>
-				<param key="page_id" value="core.page.configuration" />
-				<param key="uri" value="campfire" />
-			</params>
-		</extension>
-		
+
 		<!-- Event Actions -->
 		
 		<extension point="devblocks.event.action">
