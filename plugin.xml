@@ -4,7 +4,7 @@
 	<name>[WGM] 37Signals Campfire Integration</name>
 	<description>This plugin provides integration with 37Signals Campfire for notification functionality.</description>
 	<author>WebGroup Media, LLC.</author>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<link>https://github.com/cerb5-plugins/wgm.campfire</link>
 	<image>plugin.png</image>
  
