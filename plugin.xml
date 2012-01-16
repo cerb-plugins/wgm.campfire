@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.devblocks.com/schema/plugin.xsd">
 	<id>wgm.campfire</id>
-	<name>[WGM] 37Signals Campfire Integration</name>
+	<name>37Signals Campfire Integration</name>
 	<description>This plugin provides integration with 37Signals Campfire for notification functionality.</description>
 	<author>WebGroup Media, LLC.</author>
 	<version>1.0.2</version>
