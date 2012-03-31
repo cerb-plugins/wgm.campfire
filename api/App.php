@@ -120,6 +120,33 @@ class WgmCampfire_EventActionPost extends Extension_DevblocksEventAction {
 		$tpl->display('devblocks:wgm.campfire::events/action_post_campfire.tpl');
 	}
 	
+	function simulate($token, Model_TriggerEvent $trigger, $params, &$values) {
+		$rooms = DevblocksPlatform::getPluginSetting('wgm.campfire', 'rooms', '');
+		$rooms = json_decode($rooms, TRUE);
+		
+		$out = '';
+		
+		@$room = $params['room'];
+		
+		if(empty($room))
+			return "[ERROR] No room is defined.";
+		
+		if(!isset($rooms[$room]))
+			return "[ERROR] Selected room is invalid.";
+		
+		// [TODO] Test API
+		
+		$tpl_builder = DevblocksPlatform::getTemplateBuilder();
+		if(false !== ($content = $tpl_builder->build($params['content'], $values))) {
+			$out .= sprintf(">>> Posting to Campfire (%s):\n%s\n",
+				$rooms[$room],
+				$content
+			);
+		}
+		
+		return $out;
+	}
+	
 	function run($token, Model_TriggerEvent $trigger, $params, &$values) {
 		$campfire = WgmCampfire_API::getInstance();
 
