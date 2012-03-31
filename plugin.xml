@@ -4,14 +4,14 @@
 	<name>37Signals Campfire Integration</name>
 	<description>This plugin provides integration with 37Signals Campfire for notification functionality.</description>
 	<author>WebGroup Media, LLC.</author>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<link>https://github.com/cerb5-plugins/wgm.campfire</link>
 	<image>plugin.png</image>
  
 	<!-- Requirements -->
 
 	<requires>
-		<app_version min="5.6" max="5.7.99" />
+		<app_version min="5.6" max="5.8.99" />
 		<php_extension name="curl" />
 	</requires>
  
@@ -50,13 +50,13 @@
 		
 		<extension point="devblocks.event.action">
 			<id>wgmcampfire.event.action.post</id>
-			<name>Speak text in Campfire</name>
+			<name>Post to Campfire</name>
 			<class>
 				<file>api/App.php</file>
 				<name>WgmCampfire_EventActionPost</name>
 			</class>
 			<params>
-				<param key="label" value="Speak text in Campfire" />
+				<param key="label" value="Post to Campfire" />
 			</params>
 		</extension>
 		
