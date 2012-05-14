@@ -1,20 +1,16 @@
-Cerb5 Plugins - wgm.campfire
+Cerb6 Plugins - wgm.campfire
 ===========================================
 Copyright (C) 2012 WebGroup Media, LLC.  
 [http://www.cerberusweb.com/](http://www.cerberusweb.com/)  
 
-Experimental
-------------
-This plugin is currently being developed and is offered on an experimental basis.  _It is currently only compatible with Cerberus Helpdesk 5.4 or later_.
-
 What's this?
 ------------
-This plugin provides integration with [Campfirenow.com](http://www.campfirenow.com/) via their API. This plugin is intended to be a bridge used by other plugins to communicate with Campfire services. In addition, it adds a new Virtual Attendant action with the ability to post message to Campfire.
+This plugin provides integration with [37 Signals Campfire](http://www.campfirenow.com/) via their API. This plugin is intended to be a bridge used by other plugins to communicate with Campfire services. In addition, it adds a new Virtual Attendant action with the ability to post message to Campfire.
 
 Installation
 ------------
-* Change directory to **/cerb5/storage/plugins/**
-* `git clone git://github.com/cerb5-plugins/wgm.campfire.git`
+* Change directory to **/cerb6/storage/plugins/**
+* `git clone git://github.com/cerb6-plugins/wgm.campfire.git`
 * In your helpdesk, enable the plugin from **Setup->Plugins**.
 * Click **Setup->Plugins->Campfire** and configure your Campfire API credentials.
 

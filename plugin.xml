@@ -2,23 +2,23 @@
 <plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.devblocks.com/schema/plugin.xsd">
 	<id>wgm.campfire</id>
 	<name>37Signals Campfire Integration</name>
-	<description>This plugin provides integration with 37Signals Campfire for notification functionality.</description>
+	<description>This plugin provides integration with 37Signals Campfire via their API. It is intended to be a bridge used by other plugins to communicate with Campfire services. In addition, a new Virtual Attendant action is added for posting automated messages to Campfire.</description>
 	<author>WebGroup Media, LLC.</author>
-	<version>1.0.3</version>
+	<version>1.0.4</version>
 	<link>https://github.com/cerb5-plugins/wgm.campfire</link>
 	<image>plugin.png</image>
  
 	<!-- Requirements -->
 
 	<requires>
-		<app_version min="5.6" max="5.8.99" />
+		<app_version min="6.0" max="6.0.99" />
 		<php_extension name="curl" />
 	</requires>
  
 	<!-- Plugin Dependencies -->
 	
 	<dependencies>
-		<require plugin_id="cerberusweb.core" version="5.6" />
+		<require plugin_id="cerberusweb.core" version="6.0.0-dev" />
 	</dependencies>
 
 	<!-- Exported Classes -->
