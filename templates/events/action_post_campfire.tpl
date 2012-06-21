@@ -19,6 +19,7 @@
 {/if}
 
 <b>Message:</b>
+<label><input type="checkbox" name="{$namePrefix}[is_paste]" value="1" {if $params.is_paste}checked="checked"{/if}> Paste</label>
 <div style="margin-left:10px;margin-bottom:10px;">
 	<textarea name="{$namePrefix}[content]" rows="3" cols="45" style="width:100%;" class="placeholders">{$params.content}</textarea>
 </div>
