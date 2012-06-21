@@ -11,7 +11,7 @@ Installation
 ------------
 * Change directory to **/cerb6/storage/plugins/**
 * `git clone git://github.com/cerb6-plugins/wgm.campfire.git`
-* In your helpdesk, enable the plugin from **Setup->Plugins**.
+* In your helpdesk, enable the plugin from **Setup->Plugins->Library**.
 * Click **Setup->Plugins->Campfire** and configure your Campfire API credentials.
 
 Credits
