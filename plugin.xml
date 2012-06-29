@@ -4,21 +4,21 @@
 	<name>37Signals Campfire Integration</name>
 	<description>This plugin provides integration with 37Signals Campfire via their API. It is intended to be a bridge used by other plugins to communicate with Campfire services. In addition, a new Virtual Attendant action is added for posting automated messages to Campfire.</description>
 	<author>WebGroup Media, LLC.</author>
-	<version>1.0.5</version>
-	<link>https://github.com/cerb5-plugins/wgm.campfire</link>
+	<version>1.0.6</version>
+	<link>http://www.cerbweb.com/book/latest/plugins/wgm.campfire.html</link>
 	<image>plugin.png</image>
  
 	<!-- Requirements -->
 
 	<requires>
-		<app_version min="6.0" max="6.0.99" />
+		<app_version min="6.1" max="6.1.99" />
 		<php_extension name="curl" />
 	</requires>
  
 	<!-- Plugin Dependencies -->
 	
 	<dependencies>
-		<require plugin_id="cerberusweb.core" version="6.0.0-dev" />
+		<require plugin_id="cerberusweb.core" version="6.1.0" />
 	</dependencies>
 
 	<!-- Exported Classes -->
@@ -57,6 +57,11 @@
 			</class>
 			<params>
 				<param key="label" value="Post to Campfire" />
+				<param key="events">
+					<value>
+						<data key="*" />
+					</value>
+				</param>				
 			</params>
 		</extension>
 		

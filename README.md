@@ -1,4 +1,4 @@
-Cerb6 Plugins - wgm.campfire
+Cerb Plugins - wgm.campfire
 ===========================================
 Copyright (C) 2012 WebGroup Media, LLC.  
 [http://www.cerberusweb.com/](http://www.cerberusweb.com/)  
@@ -10,7 +10,7 @@ This plugin provides integration with [37 Signals Campfire](http://www.campfiren
 Installation
 ------------
 * Change directory to **/cerb6/storage/plugins/**
-* `git clone git://github.com/cerb6-plugins/wgm.campfire.git`
+* `git clone git://github.com/cerb-plugins/wgm.campfire.git`
 * In your helpdesk, enable the plugin from **Setup->Plugins->Library**.
 * Click **Setup->Plugins->Campfire** and configure your Campfire API credentials.
 
