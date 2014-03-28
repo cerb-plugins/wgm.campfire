@@ -33,7 +33,7 @@ class WgmCampfire_Setup extends Extension_PluginSetup {
 				
 			$rooms = array();
 			foreach($response->rooms as $room) {
-				$rooms[$room->id] = $room->name;	
+				$rooms[$room->id] = $room->name;
 			}
 			$rooms = json_encode($rooms);
 			
@@ -46,7 +46,7 @@ class WgmCampfire_Setup extends Extension_PluginSetup {
 		} catch (Exception $e) {
 			$errors[] = $e->getMessage();
 			return false;
-		}		
+		}
 	}
 };
 endif;
@@ -78,13 +78,13 @@ class WgmCampfire_API {
 	}
 	
 	/**
-	 * 
+	 *
 	 * @param string $path
 	 * @param string $post
 	 * @return HTTPResponse
 	 */
 	public function request($path, $post) {
-		$url = sprintf('https://%s.campfirenow.com/%s', $this->_url, $path); 	
+		$url = sprintf('https://%s.campfirenow.com/%s', $this->_url, $path);
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_USERPWD, sprintf('%s:X', $this->_api_token));
@@ -93,7 +93,7 @@ class WgmCampfire_API {
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		if($post !== null) {
 			curl_setopt($ch, CURLOPT_POST, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);	
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 		}
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		
@@ -165,7 +165,7 @@ class WgmCampfire_EventActionPost extends Extension_DevblocksEventAction {
 			foreach($messages as $message) {
 				$data = array(
 					'message' => array(
-						'body' => $message,	
+						'body' => $message,
 					),
 				);
 				
