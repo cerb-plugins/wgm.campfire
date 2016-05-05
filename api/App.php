@@ -85,7 +85,7 @@ class WgmCampfire_API {
 	 */
 	public function request($path, $post) {
 		$url = sprintf('https://%s.campfirenow.com/%s', $this->_url, $path);
-		$ch = curl_init();
+		$ch = DevblocksPlatform::curlInit();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_USERPWD, sprintf('%s:X', $this->_api_token));
 		curl_setopt($ch, CURLOPT_HEADER, false);
@@ -95,9 +95,8 @@ class WgmCampfire_API {
 			curl_setopt($ch, CURLOPT_POST, true);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 		}
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		
-		$response = curl_exec($ch);
+		$response = DevblocksPlatform::curlExec($ch);
 		curl_close($ch);
 		return $response;
 	}
