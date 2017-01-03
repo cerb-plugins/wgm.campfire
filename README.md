@@ -1,11 +1,11 @@
 Cerb Plugins - wgm.campfire
 ===========================================
 Copyright (C) 2012 Webgroup Media, LLC.  
-[http://www.cerberusweb.com/](http://www.cerberusweb.com/)  
+[http://cerb.io/](http://cerb.io/)  
 
 What's this?
 ------------
-This plugin provides integration with [37 Signals Campfire](http://www.campfirenow.com/) via their API. This plugin is intended to be a bridge used by other plugins to communicate with Campfire services. In addition, it adds a new Virtual Attendant action with the ability to post message to Campfire.
+This plugin provides integration with [37 Signals Campfire](http://www.campfirenow.com/) via their API. This plugin is intended to be a bridge used by other plugins to communicate with Campfire services. In addition, it adds a new bot action with the ability to post message to Campfire.
 
 Installation
 ------------
