@@ -4,7 +4,7 @@ class WgmCampfire_Setup extends Extension_PluginSetup {
 	const POINT = 'wgmcampfire.setup';
 	
 	function render() {
-		$tpl = DevblocksPlatform::getTemplateService();
+		$tpl = DevblocksPlatform::services()->template();
 
 		$params = array(
 			'api_token' => DevblocksPlatform::getPluginSetting('wgm.campfire','api_token',''),
@@ -105,7 +105,7 @@ class WgmCampfire_API {
 if(class_exists('Extension_DevblocksEventAction')):
 class WgmCampfire_EventActionPost extends Extension_DevblocksEventAction {
 	function render(Extension_DevblocksEvent $event, Model_TriggerEvent $trigger, $params=array(), $seq=null) {
-		$tpl = DevblocksPlatform::getTemplateService();
+		$tpl = DevblocksPlatform::services()->template();
 		$tpl->assign('params', $params);
 		
 		if(!is_null($seq))
@@ -135,7 +135,7 @@ class WgmCampfire_EventActionPost extends Extension_DevblocksEventAction {
 		
 		// [TODO] Test API
 		
-		$tpl_builder = DevblocksPlatform::getTemplateBuilder();
+		$tpl_builder = DevblocksPlatform::services()->templateBuilder();
 		if(false !== ($content = $tpl_builder->build($params['content'], $dict))) {
 			$out .= sprintf(">>> Posting to Campfire (%s):\n%s\n",
 				$rooms[$room],
@@ -150,7 +150,7 @@ class WgmCampfire_EventActionPost extends Extension_DevblocksEventAction {
 		$campfire = WgmCampfire_API::getInstance();
 
 		// Translate message tokens
-		$tpl_builder = DevblocksPlatform::getTemplateBuilder();
+		$tpl_builder = DevblocksPlatform::services()->templateBuilder();
 		if(false !== ($content = $tpl_builder->build($params['content'], $dict))) {
 			$path = sprintf('room/%d/speak.json', $params['room']);
 			
