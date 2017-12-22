@@ -4,7 +4,7 @@
 	<name>37Signals Campfire Integration</name>
 	<description>This plugin provides integration with 37Signals Campfire via their API. It is intended to be a bridge used by other plugins to communicate with Campfire services. In addition, a new bot action is added for posting automated messages to Campfire.</description>
 	<author>Webgroup Media, LLC.</author>
-	<version>1.3.0</version>
+	<version>1.3.1</version>
 	<link>http://www.cerbweb.com/book/latest/plugins/wgm.campfire.html</link>
 	<image>plugin.png</image>
  
