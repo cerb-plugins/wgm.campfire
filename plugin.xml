@@ -4,21 +4,21 @@
 	<name>Campfire Integration</name>
 	<description>This plugin provides integration with Basecamp Campfire via their API. It is intended to be a bridge used by other plugins to communicate with Campfire services. In addition, a new bot action is added for posting automated messages to Campfire.</description>
 	<author>Webgroup Media, LLC.</author>
-	<version>1.4.0</version>
+	<version>1.5.0</version>
 	<link>http://www.cerbweb.com/book/latest/plugins/wgm.campfire.html</link>
 	<image>plugin.png</image>
  
 	<!-- Requirements -->
 
 	<requires>
-		<app_version min="8.3" max="8.3.99" />
+		<app_version min="9.0" max="9.0.99" />
 		<php_extension name="curl" />
 	</requires>
  
 	<!-- Plugin Dependencies -->
 	
 	<dependencies>
-		<require plugin_id="cerberusweb.core" version="8.3.0" />
+		<require plugin_id="cerberusweb.core" version="9.0" />
 	</dependencies>
 
 	<!-- Exported Classes -->
