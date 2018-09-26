@@ -81,7 +81,7 @@ class WgmCampfire_API {
 	 *
 	 * @param string $path
 	 * @param string $post
-	 * @return HTTPResponse
+	 * @return mixed
 	 */
 	public function request($path, $post) {
 		$url = sprintf('https://%s.campfirenow.com/%s', $this->_url, $path);
